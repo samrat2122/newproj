@@ -3,10 +3,11 @@
 import os
 import telebot
 
-bot.polling
-TOKEN = '5120823518:AAFYN0Y_9YTislvL0pklBfxxm9PYjOXj8dk'
+
+TOKEN = os.environ['API_TOKEN']
       bot = telebot.TeleBot(TOKEN)
-          @bot.message_handler(commands=['start', 'help'])
-          def command_help(message):
+          @bot.message_handler(commands=['start'])
+          def start(message):
               bot.reply_to(message, "Hello, did someone call for help?")
 
+bot.polling
